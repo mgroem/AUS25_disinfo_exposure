@@ -52,7 +52,7 @@ server <- function(input, output, session) {
     )) +
       geom_col(color = "white", width = 0.7) +
       geom_text(aes(y = pct + 3, label = sprintf("%.1f%%", pct)), size = 3, color = "black") +
-     facet_wrap(~variable, ncol = 1) +
+     facet_wrap(~variable, ncol = 1, scales = "fixed") +
       scale_x_discrete(
         labels = c(
           "1" = "No, never",
@@ -67,11 +67,11 @@ server <- function(input, output, session) {
         y = "Percent", x = NULL,
         title = "Perceived exposure to mis/disinformation about..."
       ) +
-      coord_cartesian(ylim = c(0, 60)) +
+      coord_cartesian(ylim = c(0, 50)) +
       theme_economist() +
       theme(
         legend.position = "none",
-        panel.spacing = unit(2, "lines"),
+        panel.spacing = unit(1, "lines"),
         strip.text = element_text(margin = margin(b = 10))
       )
     

@@ -18,6 +18,8 @@ library(tidyr)
 # Load your data
 df_counts <- read.csv("df_counts.csv")
 
+df_counts$variable = factor(df_counts$variable, levels = c("...candidates or elections issues", "...the electoral process", "...electoral integrity"))
+
 # UI
 ui <- fluidPage(
   plotlyOutput("exposurePlot")

@@ -32,7 +32,7 @@ server <- function(input, output, session) {
     
     # Set base width and aspect ratio
     width <- screen_width
-    height <- if (!is.null(width)) round(width * 0.75) else 600  # 4:3 ratio
+    height <- if (!is.null(width)) round(width * 1.1) else 600  # 4:3 ratio
     
     df_counts <- df_counts %>%
       mutate(response_label = case_when(
